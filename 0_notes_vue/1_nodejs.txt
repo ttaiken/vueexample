@@ -1,0 +1,141 @@
+---------nodejs-----------
+1. index.js
+var http = require('http');
+
+
+var server = http.createServer();
+
+server.on('request', function (req, res) {
+
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+ 
+  var url = req.url;
+ 
+  res.write('<h1> web http server <br/> request url :' + url + ' </h1>');
+   
+  res.end();
+
+});
+server.listen(8080, function () {
+  console.log('started, please try http://localhost:8080');
+});
+
+2.  node index.js
+-----vue--------------------------------
+0.
+npm install -g json-server
+json-server --watch data/db.json --port 4000
+npm install vue-axios axios --save
+
+1
+npm uninstall -g vue-cli
+npm install -g @vue/cli
+vue create vuedatatable
+npm run serve
+npm run build
+npm install vue-router --save
+
+npm install bootstrap bootstrap-vue axios
+npm i element-ui -S 
+
+
+2.src/main.js
+
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import App from './App.vue'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+Vue.config.productionTip = false
+Vue.use(VueRouter)
+Vue.use(BootstrapVue )
+Vue.use(VueAxios,axios)
+const routes = [
+    { path: '/', component: Home },
+    { path: '/register', component: Register },
+    { path: '/login', component: Login },
+];
+
+const router = new VueRouter({routes})
+new Vue({
+  render: h => h(App),
+  router: router,
+}).$mount('#app')
+
+2.2 app.vue
+      <router-link to='/'>Home</router-link>
+      <router-link to='/register'>Register</router-link>
+      <router-link to='/login'>Login</router-link>
+
+                <section >
+                  <transition name="page" mode="out-in">
+                    <router-view></router-view>
+                  </transition>
+                </section>
+
+3. new vue.config.js
+module.exports = {
+    assetsDir: 'static',
+};
+
+4.npm install vue-router --save
+4.1
+create routes/routes.js
+// routes.js
+import Home from './components/Home.vue';
+import Register from './components/Register.vue';
+import Login from './components/Login.vue';
+
+const routes = [
+    { path: '/', component: Home },
+    { path: '/register', component: Register },
+    { path: '/login', component: Login },
+];
+export default routes;
+4.2main.js
+
+import Vue from 'vue';
+import App from './App.vue';
+import VueRouter from 'vue-router';
+
+import routes from './routes/routes';
+
+Vue.config.productionTip = false;
+
+Vue.use(VueRouter);
+
+const router = new VueRouter({routes});
+
+new Vue({
+    router,
+    render: h => h(App)
+}).$mount('#app');
+
+4.3
+<template>
+  <div id="app">
+    <nav>
+        <router-link to='/'>Home</router-link>
+        <router-link to='/register'>Register</router-link>
+        <router-link to='/login'>Login</router-link>
+    </nav>
+    <router-view />
+  </div>
+</template>
+4.4 store.js
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+const state = {/* */}
+const mutations = {/* */}
+
+export default new Vuex.Store({
+  state,
+  mutations
+})
+---------------------------------------

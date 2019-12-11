@@ -1,0 +1,62 @@
+App.vue
+
+<template>
+
+        <b-container fluid align-v="between " class="mr-auto h-100 ">
+            <b-row class="p-0">
+                <Navbar></Navbar>
+            </b-row>
+            <b-row>
+                <b-col cols="2" class="p-0">
+                    <Leftside class="bg-danger h-100"></Leftside>
+                </b-col>
+                <b-col>
+                    <b-row>
+                        <Breadcrumb></Breadcrumb>
+                    </b-row>
+                    <b-row>
+                        main content
+
+                    </b-row>
+                </b-col>
+
+            </b-row>
+            <b-row class="fixed-bottom">
+                footer
+            </b-row>
+
+        </b-container>
+
+</template>
+
+<script>
+//import HelloWorld from './components/HelloWorld.vue'
+    import Navbar from './components/Layout/Navbar.vue';
+    import Breadcrumb from './components/Layout/Breadcrumb.vue';
+    import Leftside from './components/Layout/Leftside.vue';
+
+    export default {
+        name: 'app',
+        components: {
+            Navbar,
+            Breadcrumb,
+            Leftside
+        }
+    }
+</script>
+
+<style>
+/*#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}*/
+
+html, body {
+  height: 100%;
+}
+
+</style>

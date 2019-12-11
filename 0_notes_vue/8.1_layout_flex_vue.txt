@@ -1,33 +1,26 @@
+App.vue
+
 <template>
 
-    <div id="app">
-        <header class="bg-warning"><Navbar></Navbar></header>
-        <main class="Site-content d-flex flex-col">
-          <aside class="col-3">aside</aside>
-            <article class="col-9 flex-column p-0">
-                <Breadcrumb></Breadcrumb>
-                <section>section</section>
-            </article>
-        
-        </main>
-        <footer class="bg-danger align-item-end">footer</footer>
-
-
+    <div class="Site">
+        <header>header</header>
+        <main class="Site-content">main</main>
+        <footer>footer</footer>
     </div>
 
 </template>
 
 <script>
 //import HelloWorld from './components/HelloWorld.vue'
-    import Navbar from './components/Layout/Navbar.vue';
-    import Breadcrumb from './components/Layout/Breadcrumb.vue';
+    //import Navbar from './components/Layout/Navbar.vue';
+    //import Breadcrumb from './components/Layout/Breadcrumb.vue';
     //import Leftside from './components/Layout/Leftside.vue';
 
     export default {
         name: 'app',
         components: {
-            Navbar,
-            Breadcrumb,
+            //Navbar,
+            //Breadcrumb,
             //Leftside
         }
     }
@@ -48,7 +41,7 @@ html, body {
     height: 100%;
 }
 
-#app{
+.Site {
   display: flex;
   min-height: 100vh;
   flex-direction: column;

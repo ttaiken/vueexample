@@ -1,0 +1,10 @@
+b-nav-form
+b-nav-item-dropdown
+b-dropdown-item
+b-navbar-toggle
+b-collapse
+b-nav-item (which could be disabled with the ¡°disabled¡± attribute)
+b-navbar-nav
+b-nav-item.
+
+<b-button variant="outline-primary">Button</b-button>

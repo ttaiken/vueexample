@@ -1,0 +1,44 @@
+  <div id="app">
+    <div style="display:none;">
+      <div class="zsider">111111111111</div>
+      <div class="dismiss"></div>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center">
+      <div class="col-12">2</div>
+      <div class="col-12 d-flex flex-row justify-content-center">
+        <div class="col-3  justify-content-center">3</div>
+        <div class="col-9  justify-content-center">4</div>
+      </div>
+      <button >Add <code>z-index:2</code> to the flex items</button>
+    </div>
+
+
+    <hello-world></hello-world>
+
+
+
+
+  </div>
+
+ .zsider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 270px;
+    height: 100%;
+    background: green;
+    z-index: 999;
+
+  }
+  .dismiss {
+    position: fixed;
+    top: 0;
+    left: 270px;
+    width: 100%;
+    height: 100%;
+    background: rgba(52, 59, 62, .9);
+    z-index: 999;
+  ;
+
+  }

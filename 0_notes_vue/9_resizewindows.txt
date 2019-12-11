@@ -1,0 +1,10 @@
+mounted() {
+
+window.onresize = () => {
+	return (() => {
+		if (document.body.window.screenWidth < 500) { 
+			window.resizeTo(document.body.clientWidth, 500);
+		}
+	})();
+};
+},

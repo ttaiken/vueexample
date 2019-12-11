@@ -1,0 +1,48 @@
+let,const
+
+
+1、v-bind：class
+v-bind:class="{ active: isActive }" 
+v-bind:class="{ active: isActive, 'text-danger': hasError }"
+<div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
+
+<todo-item v-bind:content="item" v-for="item in list" @delete="handleItemDelete" ></todo-item>
+
+var todoItem = {
+	props: ['content'],
+	template: '<li @click="handleChildClick" >{{content}}</li>'
+	method: 
+		handleChildClick: function(){
+			this.$emit('delete',parameter)
+		}
+}	
+
+var vm= new vue({
+	el: '#roor',
+	components: {
+		'todoItem': todoItem,
+	}
+Vue.component('todo-item', {
+	template: '<li></li>'
+})
+
+2、v-for:
+<td v-for="article of  articles" v-bind:key="article">
+3、@click
+<button @click="myfunction">myfunction</button>
+
+----------------------------------
+<input v-model="article.article_heading">
+--------------------------
+条件渲染 (使用 v-if)
+条件展示 (使用 v-show)
+------------------------------------------------
+标签
+<component  ref="demo" :is="currentView" ></component>
+<transition>
+
+动态组件
+组件根节点
+
+
+

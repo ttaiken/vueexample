@@ -1,0 +1,82 @@
+d-flex 
+flex-column
+justify-content-end
+flex-fill   #force them into equal widths
+flex-grow-1 #on a flex item to take up the rest of the space
+
+<template>
+
+        <article  >
+            <header id="header" class="row">
+                <Navbar></Navbar>
+            </header>
+            <section class="row">
+                <div class="col-3 p-0">
+                    <Leftside class="bg-danger h-100"></Leftside>
+                </div>
+                <div class="col-9">
+                    <b-row>
+                        <Breadcrumb></Breadcrumb>
+                    </b-row>
+                    <b-row>
+                        main content
+
+                    </b-row>
+                </div>
+
+            </section>
+            <footer class="fixed-bottom">
+                footer
+            </footer>
+
+        </article>
+
+</template>
+
+<script>
+//import HelloWorld from './components/HelloWorld.vue'
+    import Navbar from './components/Layout/Navbar.vue';
+    import Breadcrumb from './components/Layout/Breadcrumb.vue';
+    import Leftside from './components/Layout/Leftside.vue';
+
+    export default {
+        name: 'app',
+        components: {
+            Navbar,
+            Breadcrumb,
+            Leftside
+        }
+    }
+</script>
+
+<style>
+/*#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}*/
+
+html, body {
+  height: 100%;
+}
+
+article {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+section {
+    flex-grow: 1;
+    background: yellow;
+   
+}
+
+header, section, footer {
+    flex-shrink: 0;
+}
+
+</style>

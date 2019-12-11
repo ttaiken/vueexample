@@ -1,0 +1,76 @@
+https://www.runoob.com/bootstrap4/bootstrap4-flex.html
+bg-info, bg-warning, bg-primary
+flex-sm-row, md,lg,xl
+.col- 针对所有设备
+.col-sm- 平板 - 屏幕宽度等于或大于 576px
+.col-md- 桌面显示器 - 屏幕宽度等于或大于 768px)
+.col-lg- 大桌面显示器 - 屏幕宽度等于或大于 992px)
+.col-xl- 超大桌面显示器 - 屏幕宽度等于或大于 1200px)
+
+ .container (固定宽度) 或 .container-fluid (全屏宽度) 类的容器中
+.col-sm-4
+-----------------------------------------
+0.
+flex-nowrap(default)
+<div class="d-flex flex-wrap">..</div>
+ 
+<div class="d-flex flex-wrap-reverse">..</div>
+ 
+<div class="d-flex flex-nowrap">..</div>
+
+-----------------------------------------------
+1. d-flex
+<div class="d-flex p-3 bg-secondary text-white">
+  <div class="p-2 bg-info">Flex item 1</div>
+  <div class="p-2 bg-warning">Flex item 2</div>
+  <div class="p-2 bg-primary">Flex item 3</div>
+</div>
+2. d-inline-flex
+
+
+3. <div class="d-flex flex-row bg-secondary">   flex-row 
+flex-row  (default)
+flex-row-reverse
+flex-column
+
+justify-content-sm-start,
+<div class="d-flex justify-content-start">...</div>
+<div class="d-flex justify-content-end">...</div>
+<div class="d-flex justify-content-center">...</div>
+<div class="d-flex justify-content-between">...</div>
+<div class="d-flex justify-content-around">...</div>
+------------------------------------
+flex-fill 
+<div class="d-flex">
+  <div class="p-2 bg-info flex-fill">Flex item 1</div>
+  <div class="p-2 bg-warning flex-fill">Flex item 2</div>
+  <div class="p-2 bg-primary flex-fill">Flex item 3</div>
+</div>
+--------------------------------------
+flex-grow-1
+<div class="p-2 bg-primary flex-grow-1">Flex item 3</div>
+
+<div class="d-flex">
+  <div class="p-2 bg-info">Flex item 1</div>
+  <div class="p-2 bg-warning">Flex item 2</div>
+  <div class="p-2 bg-primary flex-grow-1">Flex item 3</div>
+</div>
+--------------------------------------------------
+order-1
+<div class="d-flex bg-secondary">
+  <div class="p-2 bg-info order-3">Flex item 1</div>
+  <div class="p-2 bg-warning order-2">Flex item 2</div>
+  <div class="p-2 bg-primary order-1">Flex item 3</div>
+</div>
+-------------------------------------------------
+4..align-items-start, .align-items-end, .align-items-center, .align-items-baseline, 和 .align-items-stretch
+------------------------
+5.
+p-* is for padding all sides.
+pl-* is for padding left.
+px-* padding left and right
+py-* padding top and bottom
+m-* is for margin all sides.
+
+mt-* is for margin top.
+mr-auto is for margin right auto.
