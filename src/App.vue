@@ -10,7 +10,7 @@
             <article class="col-9 flex-column p-0">
                 <Breadcrumb :dataMenu="breadMenu"></Breadcrumb>
                 <section>
-                    Path: {{ $this.Route.meta}}
+                    Path: {{ this.$route.meta.title}}
                 </section>
                 <section>
                     <router-view></router-view>

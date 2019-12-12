@@ -1,0 +1,91 @@
+https://garywoodfine.com/using-vuex-and-vue-router-in-a-vue-project/
+npm install vue-router vuex
+npm install vuex-persist --save  #Integrating LocalForage with Vuex
+touch router.js
+touch store.js
+--------------------------------------
+router.js
+import Vue from 'vue'
+import Router from 'vue-router'
+import Home from './views/Home.vue'
+
+Vue.use(Router)
+
+export default new Router({
+  mode: 'history',
+  base: process.env.BASE_URL,
+    routes: [
+        {
+            path: '/',
+            name: 'home',
+            component: Home
+        },
+        {
+            path: 'about',
+            name: 'about',
+            component: About,
+        },
+        {
+            path: 'login',
+            name: 'login',
+            component: Login,
+        },
+        {
+            path: 'dashboard',
+            name: 'dashboard',
+            component: Dashboard,
+        },
+    ]
+})
+--------------------------------------
+store.js
+import Vue from 'vue'
+import Vuex from 'vuex'
+import axios from './services/axios-auth'
+
+  Vue.use(Vuex)
+export default new Vuex.Store({
+    state: {
+        tokenId: null,
+        userId: null,
+        user: null
+    },
+    mutations: {
+        authUser (state, userData) {
+            state.idToken = userData.token
+            state.userId = userData.userId
+        },
+       },
+    actions: {
+        login ({commit}, authData) {
+            axios.post('/verifyPassword?key=[add your Firebase API key here]',{
+                email: authData.email,
+                password: authData.password,
+                returnSecureToken: truen      })
+                .then(res => {   
+                     console.log(res)
+            })
+             .catch(error => console.log(error))
+        },
+    }
+})
+--------------------------------------
+main.js
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbvue/build/css/mdb.css';
+import Vue from 'vue'
+import App from './App.vue'
+import router from './router'
+import store from './store'
+Vue.config.productionTip = false
+
+new Vue({
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app')
+--------------------------------------
+touch src/views/About.vue
+touch src/views/Dashboard.vue
+touch src/views/Login.vue
+touch src/components/Header.vue

@@ -4,7 +4,7 @@ import BootstrapVue from 'bootstrap-vue'
 import './customize.scss'
 
 import VueRouter from 'vue-router'
-import Router from 'vue-router'
+
 import Home from './views/Home.vue'
 import Productor from './views/productor/Productor.vue'
 import Network from './views/productor/Network.vue'
@@ -16,7 +16,7 @@ import UserManage from './views/setting/UserManage.vue'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
-Vue.use(Router)
+
 Vue.use(BootstrapVue)
 
 //const routes = [

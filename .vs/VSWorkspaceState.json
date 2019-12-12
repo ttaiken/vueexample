@@ -1,10 +1,13 @@
 {
   "ExpandedNodes": [
     "",
+    "\\public",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\Layout"
+    "\\src\\views",
+    "\\src\\views\\productor",
+    "\\src\\views\\setting"
   ],
-  "SelectedNode": "\\src\\customize.scss",
+  "SelectedNode": "\\0_notes_git.txt",
   "PreviewInSolutionExplorer": false
 }
