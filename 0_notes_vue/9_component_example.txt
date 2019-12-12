@@ -1,0 +1,38 @@
+<template>
+	<b-container fluid class="p-0" >
+  <b-breadcrumb :items="dataMenu"></b-breadcrumb>
+		</b-container>
+</template>
+
+<script>
+    export default {
+        name: 'Breadcrumb',
+        props: {
+            dataMenu: []
+        },
+        data() {
+          return {
+            items: [
+              {
+                text: 'Admin',
+                href: '#'
+              },
+              {
+                text: 'Manage',
+                href: '#'
+              },
+              {
+                text: 'Library',
+                active: true
+              }
+            ]
+          }
+        }
+  }
+</script>
+
+<style>
+.breadcrumb {
+    padding: 2px 15px !important;
+}
+</style>

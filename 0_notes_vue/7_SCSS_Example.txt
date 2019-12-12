@@ -1,3 +1,19 @@
+0.
+npm install sass-loader --save-dev
+npm install node-sass --save-dev
+<style lang="scss"  type="text/scss">
+  @import "../assets/style/common.scss";
+  @import "../assets/style/mixin.scss";
+  $margin: 10px 0;
+  .loginContainer {
+    @include wh(250px, auto);
+    @include flex(column, center, center);
+    .loginItem {
+        margin: $margin;
+     }
+  }
+</style>
+
 1.App.vue
 
         template: <b-button class="hideitem">test</b-button>

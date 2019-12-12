@@ -10,53 +10,29 @@
 
     .#{$theme-name} {
 
-        body {
-            background-color: $container-bg;
-            height: 100vh;
-            display: flex;
+        html, body {
+            width: 100%;
+            height: 100%;
             min-width: $screen-sm-min;
         }
 
-        .leftside {
-            background-color: $left-bg;
-            height: 100vh;
-            flex: none;
-            position: absolute;
-            width: 200px;
-            overflow-y: auto;
+        #app {
             display: flex;
-            z-index: 99999;
-            /*@media screen and (orientation: landscape) {
-           position: relative;    
-      }*/
-        }
-
-        .content {
-            flex: auto;
-            display: flex;
+            min-height: 100vh;
             flex-direction: column;
-            overflow-y: auto;
+            min-width: $screen-sm-min;
         }
 
-        .content main {
-            background-color: $right-bg;
-            flex: auto;
+        main {
+            flex: 1;
+            display: flex;
         }
 
-        .content header {
-            background-color: $button-bg;
-        }
-
-        .content footer {
-            background-color: $button-bg;
-            height: 50px;
-        }
-
-        .cz-nav-bg {
+        aside {
             background-color: $nav-bg;
         }
 
-        .cz-layout-nav-search-button {
+        .cz--nav-search-button {
             border-color: green;
             color: $button-bg;
 
@@ -98,10 +74,7 @@
             }
         }
 
-        @media screen and (max-width: 768px) {
-            .cz-layout-nav-search-button {
-                display: none;
-            }
+        @media screen and (max-width: $screen-md-min) {
 
             .hideitem {
                 display: none;
@@ -110,4 +83,5 @@
     }
 }
 
+/*yello , green, green-light,withe,brown, blue-light*/
 @include themable(theme-1, #f7eb80, #497265, #82aa91, #fff, #bc6a49,#e3f2fd);

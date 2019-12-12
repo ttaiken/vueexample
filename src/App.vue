@@ -1,15 +1,21 @@
 <template>
 
-    <div id="app" class="theme-1">
-        <header class="bg-warning"><Navbar></Navbar></header>
-        <main class="Site-content ">
+    <div id="app" >
+        <header ><Navbar></Navbar></header>
+        <main >
             <aside class="col-3">
-                <Leftside id="leftside" class= "d-flex p-0 m-0 "></Leftside>
-            </aside>        
+                <Bar></Bar>
+            </aside> 
+            <Leftside id="leftside" class="d-flex p-0 m-0 "></Leftside>
             <article class="col-9 flex-column p-0">
-                <Breadcrumb></Breadcrumb>
-            <section>section</section>
-        
+                <Breadcrumb :dataMenu="breadMenu"></Breadcrumb>
+                <section>
+                    Path: {{ $this.Route.meta}}
+                </section>
+                <section>
+                    <router-view></router-view>
+                </section>
+
             </article>
         
         </main>
@@ -22,17 +28,44 @@
 
 <script>
 //import HelloWorld from './components/HelloWorld.vue'
-    import './customize.scss'
+
     import Navbar from './components/Layout/Navbar.vue';
     import Breadcrumb from './components/Layout/Breadcrumb.vue';
     import Leftside from './components/Layout/Leftside.vue';
+    import Bar from './components/Layout/Bar.vue';
+    //import { RouterLink, RouterView } from 'vue-router'
+   
 
     export default {
         name: 'app',
         components: {
             Navbar,
             Breadcrumb,
-            Leftside
+            Leftside,
+            Bar
+        },
+        data() {
+          return {
+              dataBreadMenu: [
+              {
+                text: 'VM',
+                href: '/vm'
+              },
+              {
+                text: 'Network',
+                href: '/network'
+              },
+              {
+                text: 'Home',
+                active: true
+              }
+            ]
+          }
+        },
+        computed: {
+            breadMenu() {
+                return  this.$route.meta.bread || [];
+            }
         }
     }
 </script>
@@ -47,29 +80,6 @@
   margin-top: 60px;
 }*/
 
-html, body {
-    width: 100%;
-    height: 100%;
-
-}
-
-#app{
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  min-width: 600px;
-  background-color: green;
-}
-
-.Site-content {
-  flex: 1;
-  display: flex;
-}
-#leftside {
-     height: 100%;
-     background-color: yellow;
-
- }
 
 
 

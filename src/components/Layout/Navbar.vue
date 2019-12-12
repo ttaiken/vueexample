@@ -1,21 +1,18 @@
 <template>
     <b-container fluid class="p-0">
 
-        <b-navbar toggleable="md" type="dark" variant="info" >
+        <b-navbar class="cz-navbar" toggleable="md" type="dark" variant="info" >
             <b-navbar-brand href="#">NavBar</b-navbar-brand>
 
             <b-nav-form>
                 <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
-                <b-button  size="sm" class="hideitem my-2 my-sm-0" type="submit">Search</b-button>
+                <b-button   size="sm" class="hideitem cz-login  my-2 my-sm-0 btn-info" type="submit">Search</b-button>
             </b-nav-form>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
             <b-collapse id="nav-collapse" is-nav>
-                <b-navbar-nav>
-                    <b-nav-item href="#">Link</b-nav-item>
-                    <b-nav-item href="#" disabled>Disabled</b-nav-item>
-                </b-navbar-nav>
+     
                 <b-navbar-nav class="ml-auto">
 
 
@@ -50,6 +47,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" type="text/scss" >
 
+@import '@/customize.scss';
 </style>
