@@ -1,5 +1,7 @@
 https://garywoodfine.com/using-vuex-and-vue-router-in-a-vue-project/
-npm install vue-router vuex
+https://kuroeveryday.blogspot.com/2016/12/vuex-router-sync.html
+npm install vue-router vuex 
+npm i -S vuex-router-sync@next
 npm install vuex-persist --save  #Integrating LocalForage with Vuex
 touch router.js
 touch store.js
@@ -75,9 +77,13 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbvue/build/css/mdb.css';
 import Vue from 'vue'
 import App from './App.vue'
+import {sync} from 'vuex-router-sync'
+
 import router from './router'
 import store from './store'
 Vue.config.productionTip = false
+
+sync(store,router)
 
 new Vue({
   router,

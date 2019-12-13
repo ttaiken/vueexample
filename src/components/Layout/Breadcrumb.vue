@@ -15,9 +15,9 @@
 <script>
     export default {
         name: 'Breadcrumb',
-        props: {
-            dataMenu: []
-        },
+        props: [
+            'dataMenu'
+        ],
         //data() {
         //  return {
         //    items: [

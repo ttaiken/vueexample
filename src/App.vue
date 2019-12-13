@@ -8,9 +8,11 @@
             </aside> 
             <Leftside id="leftside" class="d-flex p-0 m-0 "></Leftside>
             <article class="col-9 flex-column p-0">
-                <Breadcrumb :dataMenu="breadMenu"></Breadcrumb>
-                <section>
-                    Path: {{ this.$route.meta.title}}
+                <Breadcrumb :dataMenu='dataMenu2'></Breadcrumb>
+                <section >
+                    <div>Path: {{dataMenu2.path}}</div>
+                    <div>Fullpath: {{ dataBreadcrumb}}</div>
+
                 </section>
                 <section>
                     <router-view></router-view>
@@ -45,8 +47,13 @@
             Bar
         },
         data() {
+          this.dataMenu2 = {path: '/',fullpath:'/'};
+          this.dataMenu2.path = this.$route.path;
+          this.dataMenu2.fullpath = this.$route.fullPath;
+
           return {
-              dataBreadMenu: [
+              
+              dataBreadcrumb: [
               {
                 text: 'VM',
                 href: '/vm'
@@ -62,11 +69,24 @@
             ]
           }
         },
-        computed: {
-            breadMenu() {
-                return  this.$route.meta.bread || [];
-            }
-        }
+        watch:{
+          $route (){
+            this.dataMenu2.path = this.$route;
+            this.dataMenu2.fullpath = this.$route ;
+          }
+        },
+        getBreadcrumb() {
+          this.dataBreadcrumb = this.$route.path.split('/')
+
+        },
+
+        // computed: {
+        //     breadMenu() {
+        //       this.dataMenu2.path = this.$route.path;
+        //       this.dataMenu2.fullpath = this.$route.fullPath;
+        //         return  this.dataMenu2;
+        //     }
+        // }
     }
 </script>
 

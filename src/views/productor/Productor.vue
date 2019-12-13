@@ -1,6 +1,7 @@
 <template>
     <div>
         Productor
+        <router-view></router-view>
     </div>
 </template>
 
